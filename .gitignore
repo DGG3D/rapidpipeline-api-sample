@@ -1,0 +1,7 @@
+output
+.vscode
+__pycache__
+schema/six/__pycache__/
+schema/six/__pycache__/six.cpython-312.pyc
+schema/six/__pycache__/six.cpython-38.pyc
+credentials.json
