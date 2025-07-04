@@ -222,7 +222,7 @@ Transform your 3D asset pipeline with RapidPipeline - trusted by brands and plat
 ### Why Choose RapidPipeline?
 
 - ⭐ Award-winning technology
-- 🚀 More than 4,500,000 3D models optimized
+- 🚀 More than 6,000,000 3D models optimized
 - ⚡ Up to 100x faster turnaround times
 - 💰 Up to 95% cost savings
 - 🛠️ Best-in-Class 3D Optimizer + Material Baker
