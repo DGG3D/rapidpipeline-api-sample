@@ -211,9 +211,9 @@ Built-in QA tools to ensure consistency across your optimized assets:
 - Ensure optimizations meet your quality standards
 - Integrate QA checks into your automated pipeline
 
-[Automated Quality Assurance API Documentation for Base Assets](https://docs.rapidpipeline.com/docs/api/rapidpipeline_v2/returns-hash-signed-links-for-the-quality-control-images-generated-after-importing-the-rawmodel)
+[Automated Quality Assurance API Documentation for Base Assets](https://docs.rapidpipeline.com/docs/api/rapidpipeline_v2/get-qc-render-files-for-a-base-asset)
 
-[Automated Quality Assurance API Documentation for Rapid Models](https://docs.rapidpipeline.com/docs/api/rapidpipeline_v2/returns-hash-signed-links-for-the-quality-control-images-generated-after-optimization)
+[Automated Quality Assurance API Documentation for Rapid Models](https://docs.rapidpipeline.com/docs/api/rapidpipeline_v2/get-qc-render-files-for-a-rapid-model)
 
 ## Get Started with RapidPipeline
 
