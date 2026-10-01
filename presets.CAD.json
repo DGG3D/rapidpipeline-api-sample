@@ -1,0 +1,91 @@
+{
+  "presets": {
+    "example_0_CAD-import_oc-culling": {
+      "config": {
+        "import": {
+           "general": {
+             "rotateZUp": false,
+             "fixAnimationData": true,
+             "normalmapYFlip": false
+           },
+           "CAD": {
+             "tessellationResolution": "fine",
+             "removeTJunctions": false,
+             "sewTolerance":0.0,
+             "maxSurfaceDeviation":0.4,
+             "maxAngle":40,
+             "maxEdgeLength":0
+           },
+           "discard": {
+             "cameras": false,
+             "lights": false,
+             "animations": false,
+             "morphTargets": false,
+             "unusedUVs": false
+           },
+           "materials": {
+             "undefinedDefaults": {
+                 "baseColor": [1,1,1,1],
+                 "metallic": 0,
+                 "roughness": 0.5
+              }
+           }
+         },
+         "meshCulling": {
+           "occlusionCulling": {
+             "perMesh": false,
+             "quality": "default",
+             "ignoreTransparency": false,
+             "diffusion": "none",
+             "runAfterDecimator": true,
+             "sampleEdges": true,
+             "perLumpDecision" : true,
+             "lumpThreshold": 0.15
+          }
+        },
+        "export": [
+          {
+            "preserveTextureFilenames": false,
+            "reencodeTextures": "auto",
+            "format": {
+              "glb": {
+                "geometryCompression": "none",
+                "excludeTangents": true,
+                "pbrMaterial": {
+                  "separateOcclusionMap": false,
+                  "excludePbrExtensions": false,
+                  "forceDoubleSidedMaterials": false,
+                  "forceUnlitMaterials": false,
+                  "convertMetalRoughness": false,
+                  "maxTextureResolution": {
+                    "default": 2048
+                  }
+                }
+              }
+            }
+          },
+          {
+            "preserveTextureFilenames": false,
+            "reencodeTextures": "auto",
+            "discard": {
+              "unusedUVs": false
+            },
+            "format": {
+              "usdz": {
+                "usdProfile": "generic",
+                "usdUnits": "cm",
+                "excludeTangents": true,
+                "forceDoubleSidedMeshes": false,
+                "usdPreviewSurface": {
+                  "maxTextureResolution": {
+                    "default": 2048
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
