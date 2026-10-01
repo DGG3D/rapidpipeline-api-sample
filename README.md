@@ -63,7 +63,7 @@ python main.py --help
 
    - [Python 3.8](https://www.python.org/) or higher installed
    - API token from [RapidPipeline](https://app.rapidpipeline.com/api_tokens)
-     - Requires an active subscription to the Team, Studio or Enterprise plans
+     - Requires an active custom subscription or Enterprise plan
      - [Tutorial](https://docs.rapidpipeline.com/docs/rapidpipeline-cloud-tutorials/api-token-setup) on how to get an API token
 
 2. **API Token Configuration**
