@@ -9,10 +9,10 @@
              "normalmapYFlip": false
            },
            "CAD": {
-             "tessellationResolution": "fine",
+             "tessellationResolution": "custom",
              "removeTJunctions": false,
              "sewTolerance":0.05,
-             "maxSurfaceDeviation":0.4,
+             "maxSurfaceDeviation":0.03,
              "maxAngle":40,
              "maxEdgeLength":0
            },
@@ -31,18 +31,79 @@
               }
            }
          },
+         "3dEdit": {
+           "meshNormals": {
+             "recomputeInputNormals": true,
+             "hardAngleThreshold": 30.0,
+             "computationMethod": "area"
+           },
+           "modelEdit": {
+             "splitMultiMaterialMeshes": true
+           },
+           "repair": {
+             "vertexMerging":{
+               "mergeDistance": {
+                 "percentage": 0.01
+               },
+               "perMesh": false 
+             },
+             "windingOrder": {
+               "visibilityMode": "default",
+               "ignoreTransparency" : false,
+               "perLump": true
+             }
+           }
+         },
+         "sceneGraphFlattening": {
+           "method": "none",
+           "preservedSceneDepth": 0
+         },
          "meshCulling": {
            "occlusionCulling": {
              "perMesh": false,
              "quality": "default",
              "ignoreTransparency": false,
-             "diffusion": "none",
+             "diffusion": "conservative",
              "runAfterDecimator": true,
              "sampleEdges": true,
              "perLumpDecision" : true,
              "lumpThreshold": 0.15
-          }
+          },
+           "smallFeatureCulling": {
+             "sizeThreshold": {
+               "percentage": 0.0
+             },
+             "runAfterDecimator": false
+           }
         },
+        "optimize": {
+           "3dModelOptimizationMethod": {
+             "onlyMaterial": {
+                 "materialMerger": {
+                   "materialRegenerator": {
+                     "uvAtlasGenerator": {
+                       "textureBaker": {
+                         "bakingResolution": {
+                           "default": 0
+                         }
+                       },
+                       "method": "packedCubeUVs",
+                       "segmentationCutAngle": 88.0,
+                       "segmentationChartAngle": 130.0,
+                       "maxAngleError": 114.0,
+                       "maxPrimitivesPerChart": 10000,
+                       "cutOverlappingPieces": true,
+                       "atlasMode": "separateMaterials",
+                       "allowRectangularAtlases": false,
+                       "packingResolution": 1024,
+                       "packingPixelDistance": 2,
+                       "atlasFactor": 1
+                    }
+                  }
+                }
+             }
+           }
+         },
         "export": [
           {
             "preserveTextureFilenames": false,
@@ -69,6 +130,9 @@
             "reencodeTextures": "auto",
             "discard": {
               "unusedUVs": false
+            },
+            "trisToQuads" : {
+                "enable" : true
             },
             "format": {
               "usdz": {
