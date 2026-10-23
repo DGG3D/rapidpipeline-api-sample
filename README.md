@@ -57,6 +57,28 @@ python main.py --help
 
 - like using a preset, a label, cleanup after processing, exit on error, etc.
 
+#### Cleanup after processing
+
+By default the sample cleans up after itself: once the optimized results have been downloaded, it deletes the data it created in your RapidPipeline cloud storage. Cleanup uses the API's DELETE endpoints:
+
+- `DELETE rawmodel/{id}` removes the uploaded base asset
+- `DELETE rapidmodel/{id}` removes each optimized rapid model (one per preset)
+
+Control it with the flags:
+
+| Flag           | Effect                                                          |
+| -------------- | --------------------------------------------------------------- |
+| `--cleanup`    | Delete uploaded and output data after processing (**default**)  |
+| `--no-cleanup` | Keep the base asset and rapid models in your cloud storage      |
+
+When you process an existing base asset by ID (`python main.py 1234567890.id`), the source base asset is preserved, because it was not uploaded by the sample. Only the rapid models created in that run are deleted.
+
+```bash
+python main.py model.glb --no-cleanup
+```
+
+See `delete_base_asset` and `delete_rapid_model` in `src/client.py` for the implementation.
+
 ## Prerequisites & Setup
 
 1. **Requirements**

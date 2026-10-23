@@ -54,13 +54,13 @@ def parse_arguments():
         "--cleanup",
         dest="cleanup",
         action="store_true",
-        help="cleanup after processing (default)",
+        help="delete the uploaded base asset and optimized rapid models from cloud storage after processing (default: enabled; a base asset given by ID is never deleted)",
     )
     parser.add_argument(
         "--no-cleanup",
         dest="cleanup",
         action="store_false",
-        help="don't cleanup after processing",
+        help="keep the uploaded base asset and optimized rapid models in cloud storage (disables the default cleanup)",
     )
     parser.add_argument(
         "-e",
